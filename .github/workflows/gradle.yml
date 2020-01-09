@@ -17,3 +17,21 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Build docker image
+      run: ./gradlew dockerBuildImage
+    - name: Publish Docker image to GitHub Package Registry
+      uses: machine-learning-apps/gpr-docker-publish@master
+      id: docker
+      with:
+        IMAGE_NAME: 'pikture2text'
+        DOCKERFILE_PATH: 'pikture2text/build/docker/Dockerfile'
+        BUILD_CONTEXT: 'pikture2text/'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Show outputs of previous step
+        run: |
+          echo "The name:tag of the Docker Image is: $VAR1"
+          echo "The docker image is hosted at $VAR2"
+        env:
+          VAR1: ${{ steps.docker.outputs.IMAGE_SHA_NAME }}
+          VAR2: ${{ steps.docker.outputs.IMAGE_URL }}
