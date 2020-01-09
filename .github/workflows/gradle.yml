@@ -28,10 +28,10 @@ jobs:
         BUILD_CONTEXT: 'pikture2text/'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Show outputs of previous step
-        run: |
-          echo "The name:tag of the Docker Image is: $VAR1"
-          echo "The docker image is hosted at $VAR2"
-        env:
-          VAR1: ${{ steps.docker.outputs.IMAGE_SHA_NAME }}
-          VAR2: ${{ steps.docker.outputs.IMAGE_URL }}
+    - name: Show outputs of previous step
+      run: |
+        echo "The name:tag of the Docker Image is: $VAR1"
+        echo "The docker image is hosted at $VAR2"
+      env:
+        VAR1: ${{ steps.docker.outputs.IMAGE_SHA_NAME }}
+        VAR2: ${{ steps.docker.outputs.IMAGE_URL }}
