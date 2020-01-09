@@ -24,8 +24,8 @@ jobs:
       id: docker
       with:
         IMAGE_NAME: 'pikture2text'
-        DOCKERFILE_PATH: 'pikture2text/build/docker/Dockerfile'
-        BUILD_CONTEXT: 'pikture2text/'
+        DOCKERFILE_PATH: 'build/docker/Dockerfile'
+        BUILD_CONTEXT: '.'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Show outputs of previous step
