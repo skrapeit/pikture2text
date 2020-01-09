@@ -17,8 +17,8 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Build docker image
-      run: ./gradlew dockerBuildImage
+    - name: create docker file
+      run: ./gradlew dockerCreateDockerfile
     - name: Publish Docker image to GitHub Package Registry
       uses: machine-learning-apps/gpr-docker-publish@master
       id: docker
