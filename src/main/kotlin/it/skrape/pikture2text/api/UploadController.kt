@@ -1,6 +1,6 @@
 package it.skrape.pikture2text.api
 
-import it.skrape.pikture2text.ocr.toText
+import it.skrape.pikture2text.pictures.ocr.toText
 import kotlinx.html.*
 import kotlinx.html.dom.createHTMLDocument
 import kotlinx.html.dom.serialize

@@ -1,4 +1,4 @@
-package it.skrape.pikture2text.ocr
+package it.skrape.pikture2text.pictures.ocr
 
 import org.junit.jupiter.api.Test
 import strikt.api.expectThat
@@ -19,6 +19,12 @@ internal class OcrScannerTest {
     internal fun `can scan directly from file`() {
         val scannedText = File("src/test/resources/examples/hallo.png").toText()
         expectThat(scannedText).isEqualTo("Hallo")
+    }
+
+    @Test
+    internal fun `can scan easy captcha`() {
+        val scannedText = File("src/test/resources/examples/handwritten-numbers.png").toTextWithOptimization()
+        expectThat(scannedText).isEqualTo("O5 221839")
     }
 
     @Test

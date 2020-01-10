@@ -42,6 +42,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
 	implementation("net.sourceforge.tess4j:tess4j:$tess4jVersion")
+	implementation("com.github.geko444:im4java:1.4.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$htmlDslVersion")
 
 	testImplementation("io.strikt:strikt-core:$striktVersion")
