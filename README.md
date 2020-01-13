@@ -1,10 +1,14 @@
 [![master build status](https://github.com/skrapeit/pikture2text/workflows/CI-build/badge.svg)](https://github.com/skrapeit/pikture2text/actions?query=workflow%3ACI-build)
 [![docker image releases](https://img.shields.io/badge/Docker-image%20available-blue?logo=docker)](https://github.com/skrapeit/pikture2text/packages/103397/versions)
 
-pikture2text 
+[pikture2text](http://pic2txt.skrape.it) 
 ============
 
-A REST Service that converts pictures to text.
+#### Converting pictures to text easy as pie 💁‍♀️.
+
+## Use online
+
+Just visit http://pic2txt.skrape.it, convert any text that is visible on a picture to real text in your browser. 
 
 ## Install via Docker
 
