@@ -19,7 +19,9 @@ A REST Service that converts pictures to text.
     $ docker login -u GITHUB_USERNAME -p GITHUB_TOKEN docker.pkg.github.com
     
     
-### Install image
+---
+    
+### Install it
 
     docker pull docker.pkg.github.com/skrapeit/pikture2text
     
