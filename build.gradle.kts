@@ -1,6 +1,7 @@
 @file:Suppress("UNUSED_VARIABLE")
 
-import com.bmuschko.gradle.docker.tasks.image.Dockerfile.GenericInstruction
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile.*
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -79,18 +80,20 @@ tasks {
         dependsOn(useLatestVersions, test)
     }
 
-
     dockerCreateDockerfile {
         instructions.set(instructions.get().flatMap {
 			if (it.keyword.startsWith("ENTRYPOINT")) {
 				mutableListOf(
+                        // CopyFileInstruction(CopyFile("$projectDir/src/main/resources/tessdata", "/app/resources/tessdata/")),
                         GenericInstruction("RUN apk --update add imagemagick"),
                         GenericInstruction("RUN apk --update add tesseract-ocr"),
                         it
                 )
 			} else {
 				mutableListOf(it)
-			} }.toMutableList())
+			}
+        }.toMutableList())
+        environmentVariable("LC_ALL", "C")
     }
 }
 
@@ -99,6 +102,6 @@ docker {
         baseImage.set("openjdk:8-alpine")
         maintainer.set(rootProject.name)
         images.set(setOf("${rootProject.name}:latest"))
-        jvmArgs.set(listOf("-Dspring.profiles.active=production", "-Xmx2048m"))
+        jvmArgs.set(listOf("-Dspring.profiles.active=docker", "-Xmx2048m"))
     }
 }

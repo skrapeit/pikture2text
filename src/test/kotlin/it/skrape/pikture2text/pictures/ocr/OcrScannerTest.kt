@@ -10,7 +10,7 @@ internal class OcrScannerTest {
 
     @Test
     internal fun `can scan text from file`() {
-        val scannedText = OcrScanner(File("src/test/resources/examples/hallo.png")).scan()
+        val scannedText = OcrScanner(File("src/test/resources/examples/hallo.png"), false).scan()
         println(scannedText)
         expectThat(scannedText).isEqualTo("Hallo")
     }
