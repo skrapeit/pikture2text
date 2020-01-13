@@ -24,5 +24,5 @@ class OcrScanner(
     }
 }
 
-fun File.toText() = OcrScanner(this, true).scan()
-fun File.toTextWithOptimization() = OcrScanner(this.optimizeForOCR(), true).scan()
+fun File.toText(formatted: Boolean = false) = OcrScanner(this, formatted).scan()
+fun File.toTextWithOptimization(formatted: Boolean = false) = OcrScanner(this.optimizeForOCR(), formatted).scan()

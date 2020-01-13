@@ -32,7 +32,7 @@ class UploadController {
             it.write(multipartFile.bytes)
         }
 
-        return file.toText()
+        return file.toText(true)
     }
 
     fun renderHtml(): String =
