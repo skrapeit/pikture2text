@@ -27,3 +27,7 @@ A REST Service that converts pictures to text.
 
     docker run -p 8080:8080 docker.pkg.github.com/skrapeit/pikture2text
     
+### Use it
+
+Just open http://localhost:8080 in your preferred Browser 
+    
