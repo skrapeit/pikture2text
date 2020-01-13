@@ -86,6 +86,7 @@ tasks {
                         // CopyFileInstruction(CopyFile("$projectDir/src/main/resources/tessdata", "/app/resources/tessdata/")),
                         GenericInstruction("RUN apk --update add imagemagick"),
                         GenericInstruction("RUN apk --update add tesseract-ocr"),
+                        GenericInstruction("EXPOSE \$PORT"),
                         it
                 )
 			} else {
