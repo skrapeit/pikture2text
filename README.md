@@ -11,11 +11,12 @@ A REST Service that converts pictures to text.
 ### Prerequisite 
 1. generate token that is able to read packages from github at [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 [![How-To generate github Token](generate-github-token.png)](https://github.com/settings/tokens/new)
+    * see github docs for [further information](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
 1. afterwards add the github PKG to docker by running:
 
 
-    $ docker login -u <GITHUB-USERNAME> -p <GITHUB-TOKEN> docker.pkg.github.com
+    $ docker login -u GITHUB_USERNAME -p GITHUB_TOKEN docker.pkg.github.com
     
     
 ### Install image
