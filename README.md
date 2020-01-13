@@ -5,3 +5,24 @@ pikture2text
 ============
 
 A REST Service that converts pictures to text.
+
+## Install via Docker
+
+### Prerequisite 
+1. generate token that is able to read packages from github at [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
+[![How-To generate github Token](generate-github-token.png)](https://github.com/settings/tokens/new)
+
+1. afterwards add the github PKG to docker by running:
+
+
+    $ docker login -u <GITHUB-USERNAME> -p <GITHUB-TOKEN> docker.pkg.github.com
+    
+    
+### Install image
+
+    docker pull docker.pkg.github.com/skrapeit/pikture2text/pikture2text:latest
+    
+### Run it
+
+    docker run -p 8080:8080 docker.pkg.github.com/skrapeit/pikture2text/pikture2text:latest
+    
