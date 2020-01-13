@@ -1,5 +1,5 @@
-pikture2text
-============
+Development
+===========
 
 ## Prerequisites
 
