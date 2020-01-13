@@ -22,7 +22,6 @@ jobs:
     - name: create docker file
       run: ./gradlew dockerCreateDockerfile
     - name: Publish Docker image to GitHub Package Registry
-      run: pwd
       uses: machine-learning-apps/gpr-docker-publish@master
       id: docker
       with:
