@@ -7,10 +7,14 @@ import java.io.File
 class OcrScanner(
         private val file: File
 ) {
-    fun scan() = Tesseract().apply {
-        setDatapath("src/main/resources/tessdata")
-        setPageSegMode(1)
-    }.doOCR(file).trim()
+    fun scan(): String {
+
+        return Tesseract().apply {
+            setDatapath("src/main/resources/tessdata")
+            setLanguage("deu+deu_frak+eng")
+            setPageSegMode(1)
+        }.doOCR(file).trim()
+    }
 }
 
 fun File.toText() = OcrScanner(this).scan()
