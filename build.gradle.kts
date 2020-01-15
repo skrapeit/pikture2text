@@ -44,6 +44,7 @@ dependencies {
 
     implementation("net.sourceforge.tess4j:tess4j:$tess4jVersion")
     implementation("com.github.geko444:im4java:1.4.2")
+    implementation("it.skrape:skrapeit-core:1.0.0-alpha4.1")
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$htmlDslVersion")
 
     testImplementation("io.strikt:strikt-core:$striktVersion")
