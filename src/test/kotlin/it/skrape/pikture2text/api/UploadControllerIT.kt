@@ -14,10 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDO
 import org.springframework.boot.web.server.LocalServerPort
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-internal class UploadControllerIT {
-
-    @LocalServerPort
-    var serverPort: Int = -1
+internal class UploadControllerIT(
+        @LocalServerPort val serverPort: Int
+) {
 
     @Test
     internal fun `can access landing page`() {
